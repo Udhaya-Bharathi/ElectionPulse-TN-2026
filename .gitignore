@@ -1,0 +1,12 @@
+# IntelliJ
+.idea/
+
+# Maven
+target/
+
+# React
+electionpulse-ui/node_modules/
+electionpulse-ui/dist/
+
+# Logs
+*.log
