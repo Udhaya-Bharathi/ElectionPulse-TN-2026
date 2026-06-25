@@ -111,5 +111,13 @@ public class Electionresult {
     public void setWinner(Boolean winner) {
         this.winner = winner;
     }
+
+    public String getCandidateName() {
+        return candidateName;
+    }
+
+    public void setCandidateName(String candidateName) {
+        this.candidateName = candidateName;
+    }
 }
 
