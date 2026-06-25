@@ -35,6 +35,7 @@ public class Electionresult {
 
     private Boolean winner;
 
+    private String candidateName;
 
 
     public Electionresult() {
