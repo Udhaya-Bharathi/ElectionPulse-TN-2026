@@ -36,6 +36,9 @@ public class MasterDataService {
 
 
     public void importMasterData(){
+        int regionCount = 0;
+        int districtCount = 0;
+        int constituencyCount = 0;
         try {
 
             Resource resource = resourceLoader.getResource("classpath:data/constituency_master.csv");
@@ -69,7 +72,8 @@ public class MasterDataService {
           region = new Region();
           region.setName(regionName);
           regionRepository.save(region);
-          System.out.println("Created Region : " + regionName);
+          regionCount++;
+
       }
 
 
@@ -85,7 +89,8 @@ public class MasterDataService {
               district.setName(districtName);
               district.setRegion(region);
               districtRepository.save(district);
-              System.out.println("Created district : " + districtName);
+              districtCount++;
+
           }
           Optional<Constituency> optionalConstituency=constituencyRepository.findByAcNumber(acNumber);
       Constituency constituency;
@@ -102,6 +107,7 @@ public class MasterDataService {
           constituency.setLokSabhaConstituency(lokSabha);
 
           constituencyRepository.save(constituency);
+          constituencyCount++;
       }
 
   }
@@ -111,5 +117,9 @@ public class MasterDataService {
             e.printStackTrace();
 
         }
+        System.out.println("Master Import Completed");
+        System.out.println("Regions Imported: " + regionCount);
+        System.out.println("Districts Imported: " + districtCount);
+        System.out.println("Constituencies Imported: " + constituencyCount);
     }
 }

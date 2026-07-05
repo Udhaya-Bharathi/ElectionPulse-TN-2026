@@ -69,7 +69,7 @@ public class ElectionImportService {
                 election=electionRepository.save(election);
 
             }
-
+int imported=0;
             for (int i = 1; i < rows.size(); i++) {
 
                 String[] row = rows.get(i);
@@ -157,6 +157,7 @@ public class ElectionImportService {
 
 
                 Electionresult saved = electionResultRepository.save(result);
+                imported++;
 
 
                 // Alliance comes here
@@ -165,7 +166,7 @@ public class ElectionImportService {
 
             }
 
-            System.out.println("2026 Import Completed");
+            System.out.println("Imported " + imported + " election results successfully.");
 
         }
 
