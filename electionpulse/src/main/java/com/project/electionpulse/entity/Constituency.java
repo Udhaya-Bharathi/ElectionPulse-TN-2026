@@ -21,6 +21,10 @@ public class Constituency {
     @JoinColumn(name="district_id")
     private District district;
 
+    private String LokSabhaConstituency;
+
+
+
     public Constituency(){
 
     }
@@ -64,5 +68,12 @@ public class Constituency {
 
     public void setDistrict(District district) {
         this.district = district;
+    }
+    public String getLokSabhaConstituency() {
+        return LokSabhaConstituency;
+    }
+
+    public void setLokSabhaConstituency(String lokSabhaConstituency) {
+        LokSabhaConstituency = lokSabhaConstituency;
     }
 }

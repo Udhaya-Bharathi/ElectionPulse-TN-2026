@@ -6,14 +6,13 @@ import jakarta.persistence.*;
 @Table(name="parties")
 public class Party {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String fullname;
+    private String smallName;
+    private String fullName;
 
-    private String shortname;
-
-    public Party(){
+    public Party() {
 
     }
 
@@ -25,19 +24,19 @@ public class Party {
         this.id = id;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getSmallName() {
+        return smallName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setSmallName(String smallName) {
+        this.smallName = smallName;
     }
 
-    public String getShortname() {
-        return shortname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setShortname(String shortname) {
-        this.shortname = shortname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

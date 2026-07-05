@@ -31,8 +31,8 @@ public class PartyService {
             return null;
         }
 
-        existingParty.setFullname(updatedParty.getFullname());
-        existingParty.setShortname(updatedParty.getShortname());
+        existingParty.setFullName(updatedParty.getFullName());
+        existingParty.setSmallName(updatedParty.getSmallName());
 
         return partyrepo.save(existingParty);
     }
