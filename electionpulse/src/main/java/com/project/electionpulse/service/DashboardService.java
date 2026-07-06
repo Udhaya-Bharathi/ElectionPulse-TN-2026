@@ -1,17 +1,14 @@
 package com.project.electionpulse.service;
 
 import com.project.electionpulse.dto.DashboardStats;
-import com.project.electionpulse.repository.DistrictRepository;
-import com.project.electionpulse.repository.PartyRepository;
-import com.project.electionpulse.repository.RegionRepository;
+import com.project.electionpulse.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class DashboardService {
-
-    @Autowired
-    private PartyRepository partyRepository;
 
     @Autowired
     private RegionRepository regionRepository;
@@ -19,12 +16,27 @@ public class DashboardService {
     @Autowired
     private DistrictRepository districtRepository;
 
-    public DashboardStats getStats() {
+    @Autowired
+    private ConstituencyRepository constituencyRepository;
+
+    @Autowired
+    private PartyRepository partyRepository;
+
+    @Autowired
+    private AllianceRepository allianceRepository;
+
+    @Autowired
+    private ElectionResultRepository electionResultRepository;
+
+    public DashboardStats getDashboardStats() {
 
         return new DashboardStats(
-                partyRepository.count(),
                 regionRepository.count(),
-                districtRepository.count()
+                districtRepository.count(),
+                constituencyRepository.count(),
+                partyRepository.count(),
+                allianceRepository.count(),
+                electionResultRepository.count()
         );
     }
 }
