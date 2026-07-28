@@ -91,12 +91,12 @@ Built using **Spring Boot**, **React**, and **PostgreSQL**, the project focuses 
 
 # 🏗 Project Architecture
 
-```
-
-![Project Architecture](screenshots/electionpulse blockdiagram.png)
 
 
-```
+![Project Architecture](screenshots/electionpulse-architecture.png)
+
+
+
 
 ---
 
