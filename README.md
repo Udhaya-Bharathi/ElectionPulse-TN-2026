@@ -161,7 +161,7 @@ ElectionPulse
 | Assembly Constituencies | 234 |
 | Political Parties | 105 |
 | Alliances | 6 |
-| Election Results | 4257 |
+| Election Records | 4257 |
 
 ---
 
@@ -196,7 +196,7 @@ ElectionPulse
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/ElectionPulse.git
+git clone https://github.com/Udhaya-Bharathi/ElectionPulse.git
 ```
 
 Backend
@@ -257,7 +257,7 @@ Final Year Undergraduate
 Department of Electrical and Electronics Engineering (EEE)  
 SSN College of Engineering
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/Udhaya-Bharathi
 
 ---
 
