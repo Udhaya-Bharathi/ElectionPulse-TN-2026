@@ -92,8 +92,8 @@ Built using **Spring Boot**, **React**, and **PostgreSQL**, the project focuses 
 # 🏗 Project Architecture
 
 ```
-<img width="206" height="395" alt="image" src="https://github.com/user-attachments/assets/43b06231-151b-45c2-8591-63b724ba02f9" />
 
+![Project Architecture](screenshots/electionpulse blockdiagram.png)
 
 
 ```
