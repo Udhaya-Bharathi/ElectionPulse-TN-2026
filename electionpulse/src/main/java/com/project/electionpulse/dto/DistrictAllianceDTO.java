@@ -1,37 +1,62 @@
 package com.project.electionpulse.dto;
 
-    public class DistrictAllianceStatsDTO {
+    public class DistrictAllianceDTO {
 
-        private String district;
         private String alliance;
-        private Long seatsWon;
-        private Long votes;
 
-        public DistrictAllianceStatsDTO(String district,
-                                        String alliance,
-                                        Long seatsWon,
-                                        Long votes) {
-            this.district = district;
+        private long seats;
+
+        private double seatShare;
+
+        private long votes;
+
+        private double voteShare;
+
+        public DistrictAllianceDTO(String alliance, long seats, double seatShare, long votes, double voteShare) {
             this.alliance = alliance;
-            this.seatsWon = seatsWon;
+            this.seats = seats;
+            this.seatShare = seatShare;
             this.votes = votes;
-        }
-
-        public String getDistrict() {
-            return district;
+            this.voteShare = voteShare;
         }
 
         public String getAlliance() {
             return alliance;
         }
 
-        public Long getSeatsWon() {
-            return seatsWon;
+        public void setAlliance(String alliance) {
+            this.alliance = alliance;
         }
 
-        public Long getVotes() {
+        public long getSeats() {
+            return seats;
+        }
+
+        public void setSeats(long seats) {
+            this.seats = seats;
+        }
+
+        public double getSeatShare() {
+            return seatShare;
+        }
+
+        public void setSeatShare(double seatShare) {
+            this.seatShare = seatShare;
+        }
+
+        public long getVotes() {
             return votes;
         }
 
+        public void setVotes(long votes) {
+            this.votes = votes;
+        }
 
+        public double getVoteShare() {
+            return voteShare;
+        }
+
+        public void setVoteShare(double voteShare) {
+            this.voteShare = voteShare;
+        }
     }

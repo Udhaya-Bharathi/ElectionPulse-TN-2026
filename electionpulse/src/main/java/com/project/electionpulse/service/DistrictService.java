@@ -19,9 +19,17 @@ public class DistrictService {
 
 
 
-    public List<District> getAllConstituencies(){
+    public List<District> getAllDistricts(){
         return districtrepo.findAll();
     }
+    public List<String> getDistrictNames() {
 
+        return districtrepo.findAll()
+                .stream()
+                .map(District::getName)
+                .sorted()
+                .toList();
+
+    }
 
 }

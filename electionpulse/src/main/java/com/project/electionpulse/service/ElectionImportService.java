@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
+import java.util.HashSet;
+import java.util.Set;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -15,7 +17,7 @@ import java.util.Optional;
 
 @Service
 public class ElectionImportService {
-
+    private final Set<String> unknownParties = new HashSet<>();
     @Autowired
     private ResourceLoader resourceLoader;
 
@@ -82,6 +84,9 @@ int imported=0;
                 String candidateName = row[2].trim();
 
                 String partyName = row[3].trim();
+                if (partyName.contains("CPI")) {
+                    System.out.println("Party = [" + partyName + "]");
+                }
 
                 Long votes =
                         Long.parseLong(row[4]);
@@ -109,8 +114,23 @@ int imported=0;
 
                 String allianceName = getAllianceName(partyName);
 
+                if (partyName.equals("CPI(M)")) {
+                    System.out.println("--------------------------------");
+                    System.out.println("Party           : " + partyName);
+                    System.out.println("Alliance String : " + allianceName);
+                }
+
                 Optional<Alliance> optionalAlliance =
                         allianceRepository.findByName(allianceName);
+
+                if (partyName.equals("CPI(M)")) {
+                    System.out.println("Alliance Found  : " + optionalAlliance.isPresent());
+
+                    if (optionalAlliance.isPresent()) {
+                        System.out.println("Alliance Name   : " + optionalAlliance.get().getName());
+                        System.out.println("Alliance Id     : " + optionalAlliance.get().getId());
+                    }
+                }
 
                 Alliance alliance;
 
@@ -150,11 +170,20 @@ int imported=0;
                 result.setParty(party);
 
                 result.setAlliance(alliance);
+                if (partyName.equals("CPI(M)")) {
+                    System.out.println("Saved Alliance  : " + result.getAlliance().getName());
+                }
 
                 result.setCandidateName(candidateName);
 
                 result.setVotes(votes);
 
+
+                System.out.println(
+                        candidateName + " | " +
+                                partyName + " | " +
+                                alliance.getName()
+                );
 
                 Electionresult saved = electionResultRepository.save(result);
                 imported++;
@@ -178,7 +207,7 @@ int imported=0;
 
     }
     private String getAllianceName(String party) {
-
+        party = party.trim().toUpperCase();
         switch (party) {
 
             // SPA
@@ -194,7 +223,7 @@ int imported=0;
             case "DMDK":
             case "VCK":
             case "CPI":
-            case "CPM":
+            case "CPI(M)":
             case "IUML":
                 return "SPA";
 
@@ -226,9 +255,11 @@ int imported=0;
                 return "NOTA";
 
             default:
+                if (unknownParties.add(party)) {
+                    System.out.println("UNKNOWN PARTY -> [" + party + "]");
+                }
                 return "Independent";
         }
     }
-
 
 }
