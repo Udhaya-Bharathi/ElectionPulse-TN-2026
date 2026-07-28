@@ -156,8 +156,8 @@ ElectionPulse
 # 📷 Screenshots
 
 ## Dashboard
+![District Performance](screenshots/district-performance.png)
 
-![Dashboard](screenshots/dashboard.png)
 
 ---
 
@@ -175,8 +175,8 @@ ElectionPulse
 ---
 
 ## District Performance
+![Dashboard](screenshots/dashboard.png)
 
-![District Performance](screenshots/district-performance.png)
 
 ---
 
