@@ -157,25 +157,26 @@ ElectionPulse
 
 ## Dashboard
 
-> Add screenshot here
+![Dashboard](screenshots/dashboard.png)
 
 ---
 
 ## Alliance Analytics
 
-> Add screenshot here
+![Alliance Analytics](screenshots/alliance-analytics.png)
+
 
 ---
 
 ## Party Analytics
 
-> Add screenshot here
+![Party Analytics](screenshots/party-analytics.png)
 
 ---
 
 ## District Performance
 
-> Add screenshot here
+![District Performance](screenshots/district-performance.png)
 
 ---
 
