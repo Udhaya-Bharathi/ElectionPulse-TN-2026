@@ -7,7 +7,7 @@ import {
     ResponsiveContainer
 } from "recharts";
 // add to imports at the top
-import AlliancePieChart from "../components/charts/AlliancePieChart";
+//import AlliancePieChart from "../components/charts/AlliancePieChart";
 import {
     Paper,
     Typography

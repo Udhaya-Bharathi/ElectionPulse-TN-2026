@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Parties from "./pages/Parties";
 import Regions from "./pages/Regions";
 import DistrictDetails from "./pages/DistrictDetails";
+import AIAnalysis from "./pages/AIAnalysis";
 function App() {
     return (
         <BrowserRouter>
@@ -19,6 +20,10 @@ function App() {
                 <Route
                     path="/district/:districtName"
                     element={<DistrictDetails />}
+                />
+                <Route
+                    path="/ai"
+                    element={<AIAnalysis/>}
                 />
             </Routes>
 

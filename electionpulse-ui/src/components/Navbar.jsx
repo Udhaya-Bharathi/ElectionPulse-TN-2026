@@ -30,6 +30,10 @@ function Navbar() {
         {
             label: "Regions",
             path: "/regions"
+        },
+        {
+            label: "AI Analyst",
+            path: "/ai"
         }
     ];
 

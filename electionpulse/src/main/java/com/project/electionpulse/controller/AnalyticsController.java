@@ -10,9 +10,6 @@ import java.util.List;
 import com.project.electionpulse.dto.AllianceVoteShareDTO;
 import com.project.electionpulse.dto.PartyVoteShareDTO;
 
-import com.project.electionpulse.service.AnalyticsAIService;
-import com.project.electionpulse.dto.AISummaryDTO;
-
 @RestController
 @RequestMapping("/api/analytics")
 @CrossOrigin(origins = "*")
@@ -20,8 +17,6 @@ public class AnalyticsController {
 
     @Autowired
     private AnalyticsService analyticsService;
-    @Autowired
-    private AnalyticsAIService analyticsAIService;
 
     @GetMapping("/district-performance")
     public List<DistrictPerformanceDTO> getDistrictPerformance() {
@@ -61,12 +56,7 @@ public class AnalyticsController {
         return analyticsService.getPartyVoteShare();
 
     }
-    @GetMapping("/ai-summary")
-    public AISummaryDTO getAISummary() {
 
-        return analyticsAIService.generateSummary();
-
-    }
 }
 
 
