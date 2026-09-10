@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/api/districts")
 @CrossOrigin(origins = {
     "http://localhost:5173",
-    "https://electionpulse-tn-2026.vercel.app"
+    "https://election-pulse-tn-2026.vercel.app"
 })
 public class DistrictController {
 

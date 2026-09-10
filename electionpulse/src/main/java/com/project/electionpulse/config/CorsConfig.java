@@ -21,7 +21,7 @@ public class CorsConfig {
                 registry.addMapping("/**")
                        .allowedOrigins(
     "http://localhost:5173",
-    "https://electionpulse-tn-2026.vercel.app"
+    "https://election-pulse-tn-2026.vercel.app"
 )
                         .allowedMethods("*")
                         .allowedHeaders("*");
