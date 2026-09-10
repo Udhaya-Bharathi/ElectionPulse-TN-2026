@@ -10,3 +10,4 @@ electionpulse-ui/dist/
 
 # Logs
 *.log
+*.dump
