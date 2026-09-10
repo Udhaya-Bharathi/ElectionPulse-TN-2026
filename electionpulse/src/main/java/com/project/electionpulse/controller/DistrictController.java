@@ -8,7 +8,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/districts")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://electionpulse-tn-2026.vercel.app"
+})
 public class DistrictController {
 
     @Autowired
